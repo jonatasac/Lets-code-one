@@ -102,5 +102,351 @@ PseudoCódigo:
 
 Sem as variáveis não conseguimos armazenar as informações na memória de trabalho do computador e não conseguimos fazer nosso algoritmo funcionar.
 
-## Decisão
+## Estruturas de Decisão
+
+Nos dá a oportunidade de decidir quais funções vamos rodar e quais não vamos rodar em determinada tarefa. E essa decisão pode voltar ao fluxo inicial de um determinado algoritmo.
+
+Exemplo1:
+
+- Idade maior ou igual a 16 anos?
+  - Se não:
+    - Esperar ter pelo menos 16 anos
+    - FINAL
+  - Se sim:
+    - Ir até o cartório eleitoral mais próximo
+    - votar em outubro
+    - FINAL
+
+Exemplo2:
+
+- INICIO
+- mostrar 'Digite seu nome'
+- armazenar o nome na variavel NOME
+- mostrar 'que horas são?'
+- armazenar a hora na variavel HORA_ATUAL
+- avaliar o valor em HORA_ATUAL
+  - Se 0 a 12
+    - armazenar 'Bom dia' em MENSAGEM
+  - Se 12 a 18
+    - armazenar 'Boa tarde' em MENSAGEM
+  - Se 18 a 24
+    - armazenar 'Boa noite' em MENSAGEM
+- Mostrar MENSAGEM, NOME
+- FINAL
+
+PseudoCódigo:
+
+> INICIO principal
+>
+> ​	VAR nome: STRING
+>
+> ​	VAR hora: INTEIRO
+>
+> ​	VAR mensagem: STRING
+>
+> ​	MOSTRAR "Digite seu nome: "
+>
+> ​	ESPERAR_DIGITACAO -> nome
+>
+> ​	MOSTRAR "Digite a hora atual (somente a hora): "
+>
+> ​	ESPERAR_DIGITACAO -> hora
+>
+> ​	SE (hora MAIOR_QUE 0) E (hora MENOR_QUE 12)
+>
+> ​		DEFINIR "Bom dia " -> mensagem
+>
+> ​	OU_SE (hora MAIOR_OU_IGUAL_A 12) E (hora MENOR_QUE 18)
+>
+> ​		DEFINIR "Boa noite " -> mensagem
+>
+> ​	MOSTRAR mensagem, nome
+>
+> FIM
+
+O computador vai se adaptar a uma regra definida e assim executar a lista de comandos específica.
+
+As estruturas de decisão são usadas para decidir o que fazer com cada informação que der entrada.
+
+Pode usar várias estruturas de decisão dentro de outras estruturas de decisão, sempre que necessário.
+
+## Estruturas de Repetição
+
+Vão ter comandos pra decidir o que fazer e comandos para repetir este comando de decisão. É mais chamado de Loop. A quantidade de loops que foi executado é chamado de iterações.
+
+Exemplo1:
+
+- Início
+- Iteracao_atual = 1
+- soma=0
+- mostrar "entre com um numero"
+- esperar numero -> num
+- somar soma com num
+- somar 1 em iteracao_atual
+  - se iteracao_atual > 3
+    - mostrar soma
+  - senao
+    - retornar a mostrar "entre com um numero"
+- FIM
+
+PseudoCódigo: (Pedir para o usuario digitar numeros ate que a soma seja igual ou maior a 100 e depois mostrar a soma)
+
+>INICIO principal
+>
+>​	VAR soma: INTEIRO
+>
+>​	ARMAZENAR 0 -> soma
+>
+>​	ENQUANTO soma MENOR QUE 100
+>
+>​		MOSTRAR "Digite um número: "
+>
+>​		ESPERAR_DIGITACAO -> numero
+>
+>​		SOMAR soma, numero -> soma
+>
+>​	FIM ENQUANTO
+>
+>​	MOSTRAR soma
+>
+>FIM
+
+O computador roda todos os comandos do loop até a condição do loop ser atendido. Algumas linguagens permite que seja interrompido o loop no meio, mas não é o caso no momento.
+
+O laço é um grupo de comandos que vai ser executado até a variável de avaliação seja verificada como não válida.
+
+É preciso estar bem definida a variável de avaliação para o programa saber quando interromper, se não vai rodar sem parar.
+
+## Listas/Arrays
+
+As variáveis possuem limitação, só é possível armazenar um item por vez.
+
+Arrays são usados para armazenar uma sequência de informações na ordem que são fornecidos.
+
+Em algumas linguagens é possível armazenas em uma array vários tipos de dados, em outras linguagens é necessário que na array só tenha um tipo de dados.
+
+Exemplo1:
+
+> INICIO principal
+>
+> ​	VAR lista_numeros: LISTA(INTEIRO)
+>
+> ​	VAR numero_atual: INTEIRO
+>
+> ​	DEFINIR 1 -> numero_atual
+>
+> ​	ENQUANTO (QUANTIDADE_INTENS(lista_numeros) MENOR_QUE 20)
+>
+> ​		SE (RESTO(DIVISAO(numero_atual, 2)) IGUAL_A 0) OU (RESTO(DIVISAO(numero_atual, 5)) IGUAL_A 0)
+>
+> ​		ADICIONAR_ITEM numero_atual, lista_numeros
+>
+> ​		FIM SE
+>
+> ​	DEFINIR numero_atual + 1 -> numero_atual
+>
+> ​	FIM ENQUANTO
+>
+> ​	MOSTRAR lista_numeros
+>
+> FIM
+
+Geralmente a contagem de posições em uma lista começa em 0 (zero).
+
+Exemplo2:
+
+> INICIO principal
+>
+> ​	VAR lista_numeros: LISTA(INTEIRO)
+>
+> ​	VAR numero_atual: INTEIRO
+>
+> ​	DEFINIR 1 -> numero_atual
+>
+> ​	ENQUANTO (QUANTIDADE_INTENS(lista_numeros) MENOR_QUE 20)
+>
+> ​		SE (RESTO(DIVISAO(numero_atual, 2)) IGUAL_A 0) OU (RESTO(DIVISAO(numero_atual, 5)) IGUAL_A 0)
+>
+> ​			ADICIONAR_ITEM numero_atual, lista_numeros
+>
+> ​		FIM SE
+>
+> ​	DEFINIR numero_atual + 1 -> numero_atual
+>
+> ​	FIM ENQUANTO
+>
+> ​	MOSTRAR lista_numeros
+>
+> ​	PARA CADA item EM lista_numeros
+>
+> ​		SE (RESTO(DIVISAO(item, 2)) IGUAL_A 0)
+>
+> ​			MOSTRAR "Numero ", item, " é par"
+>
+> ​		SENAO
+>
+> ​			MOSTRAR "Numero ", item, " é ímpar"
+>
+> ​		FIM SE
+>
+> ​	FIM PARA
+>
+> FIM
+
+## Funções
+
+São usados para organizar códigos e algorítmos. Sempre tem uma entrada e tem uma saída, lembra até a idéia de algoritmos e muitas pessoas chamam funções de subprogramas. As funções permitem reaproveitar boa parte dos códigos. Sempre bom deixar isolado e só chamar quando for preciso.
+
+Exemplo1:
+
+- Inicio
+- mostrar 'passo 1, obter os numeros'
+- chamar FUNCAO_OBTER_NUMEROS
+- mostrar lista_numeros
+- Fim
+
+Sendo:
+
+- FUNCAO_OBTER_NUMEROS
+- mostrar 'Digite um numero'
+- obter numero
+- adicionar numero na lista lista_numeros
+- tamanho de lista_numeros < 10
+  - SE sim
+    - Retornar para mostrar 'Digite um numero'
+  - SE nao
+    - retornar lista_numeros
+- Fim
+
+PseudoCódigo
+
+> INICIO principal
+>
+> ​	VAR lista_numeros: ARRAY(INTEIRO)
+>
+> ​	MOSTRAR "Vamos Obter os números: "
+>
+> ​	CHAMAR OBTER_NUMEROS -> lista_numeros
+>
+> ​	MOSTRAR "Agora, mostrar os números: "
+>
+> FIM
+
+Função:
+
+> INICIO OBTER_NUMEROS
+>
+> ​	VAR lista_numeros_func: ARRAY(INTEIRO)
+>
+> ​	VAR numero: INTEIRO
+>
+> ​	ENQUANTO TAMANHO(lista_numeros) MENOR_QUE 10
+>
+> ​		MOSTRAR "Digite um numero "
+>
+> ​		ESPERAR_DIGITACAO -> numero
+>
+> ​		ADICIONAR_ITEM numero, lista_numeros_func
+>
+> ​	FIM ENQUANTO
+>
+> ​	RETORNAR lista_numeros_func
+>
+> FIM OBTER_NUMEROS
+
+Após rodar a função os dados obtidos são perdidos, não precisa mais guardar nela os dados.
+
+Conseguimos isolar assim complexidade e responsabilidade. Sabendo assim resolver erros que podem ocorrer no programa.
+
+## Exercício Completo (PSEUDOCÓDIGO)
+
+### Criação de um caixa eletrônico
+
+> INICIO principal
+>
+> ​	VAR opcao_selecionado: STRING
+>
+> ​	VAR valor: INTEIRO
+>
+> ​	VAR saldo: INTEIRO
+>
+> ​	VAR encerrar_programa: BOOLEANO
+>
+> ​	DEFINIR encerrar_programa -> Falso
+>
+> ​	ENQUANTO encerrar_programa = Falso
+>
+> ​		CHAMAR MOSTRAR_MENU -> opcao_selecionada
+>
+> ​		SE opcao_seleciona = a
+>
+> ​			MOSTRAR "Seu saldo é: ", saldo
+>
+> ​		OU_SE opcao_selecionada = b
+>
+> ​			MOSTRAR "Digite o valor a depositar: "
+>
+> ​			ESPERAR_DIGITACAO -> valor
+>
+> ​			SOMAR valor, saldo -> saldo
+>
+> ​			MOSTRAR "Depósito efetuado"
+>
+> ​		OU_SE opcao_selecionada = c
+>
+> ​			MOSTRAR "Digite o valor a retirar: "
+>
+> ​			ESPERAR_DIGITACAO -> valor
+>
+> ​			SE valor > saldo
+>
+> ​				MOSTRAR "Saque não permitido, saldo insuficiente"
+>
+> ​			SENAO
+>
+> ​				SUBTRAIR valor, saldo -> saldo
+>
+> ​			FIM SE
+>
+> ​			MOSTRAR "Saque Efetuado"
+>
+> ​		OU_SE opcao_selecionada = d
+>
+> ​			DEFINIR Verdadeiro -> encerrar_programa
+>
+> ​		SENAO
+>
+> ​			MOSTRAR "Opção inválida, tente novamente!"
+>
+> ​		FIM SE
+>
+> ​	FIM ENQUANTO
+>
+> FIM
+
+
+
+> INICIO MOSTRAR_MENU
+>
+> ​	VAR opcao_selecionada: STRING
+>
+> ​	MOSTRAR "Menu de operação"
+>
+> ​	MOSTRAR "[a] Mostrar Saldo"
+>
+> ​	MOSTRAR "[b] Efetuar depósito"
+>
+> ​	MOSTRAR "[c] Efetuar Saque"
+>
+> ​	MOSTRAR "[d] Finalizar"
+>
+> ​	ESPERAR_DIGITACAO -> opcao_selecionada
+>
+> ​	RETORNAR opcao_selecionada
+>
+> FIM MOSTRAR_MENU
+
+## Desempenho de Algoritmos
+
+Programar é construir algoritmos de forma otimizada. Precisamos montar algo que funcione e funcione bem.
 
