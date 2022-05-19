@@ -450,3 +450,19 @@ Conseguimos isolar assim complexidade e responsabilidade. Sabendo assim resolver
 
 Programar é construir algoritmos de forma otimizada. Precisamos montar algo que funcione e funcione bem.
 
+A complexidade dos algoritmos podem estar relacionados com a forma que armazenamos os dados. Os dados e os comandos devem estar organizados de forma a deixar os nossos programas rodando mais rápido.
+
+Tipos de Notação a complexidade de algoritmos:
+
+- Acesso direto aos dados. Operação de complexidade 1.
+- BIG O. Mostra um O e um número do lado e mostra o numero de operações que foram feitas. BIG O de N.
+- O de log de N na base 2. Pesquisa logaritmica que vai reduzindo a quantidade de itens de forma logaritmica, reduzindo assim o numero de operações que precisa fazer.
+
+## Dicas para Montar Algoritmos
+
+Precisamos definir qual problema nós precisamos resolver. Podemos contruir o algoritmo e depois ir melhorando as funcionalidades dele.
+
+Precisamos conhecer bem as ferramentas que vamos utilizar para poder construir programas melhores.
+
+Precisamos testar ao máximo nosso programa para apresentarmos soluções para os possíveis erros que possa aparecer.
+
