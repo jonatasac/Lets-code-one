@@ -10,7 +10,14 @@
 
 ### Marcação do primeiro texto
 
+#### Introdução
 
+Nessa aula criaremos a Barbearia Alura utilizando HTML  e CSS. Nós vamos criar texto, imagem, blocos de conteúdo, listas de informações. Vamos aprender a mudar cor, posicionar elementos, mudar espaçamento.
+
+Professor: Pedro Marins
+[Texto Base](https://caelum-online-public.s3.amazonaws.com/1179-html5-css3/01/texto-base.zip)
+
+#### Definindo Texto
 
 
 
