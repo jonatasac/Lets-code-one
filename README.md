@@ -10,3 +10,6 @@ Repositório criado para o curso do Oracle Next Education na Alura.
   
 ### [3. HTML e CSS](https://github.com/jonatasac/ONE-ALURA/tree/main/HTML%20%2B%20CSS)
 - [Anotações](https://github.com/jonatasac/ONE-ALURA/blob/main/HTML%20%2B%20CSS/HTML%20e%20CSS.md)
+- **Projeto:** Barbearia da Alura
+  - [Texto base](https://github.com/jonatasac/ONE-ALURA/blob/main/HTML%20%2B%20CSS/Texto%20base.txt)
+
