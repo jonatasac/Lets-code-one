@@ -20,7 +20,7 @@ Browser é uma ferramenta de desenvolvimento, basta olharmos para qualquer pági
 
 Ao clicarmos na página e utilizarmos o atalho "Ctrl + U", veremos o conjunto de instruções, os códigos que foram escritos para gerar tudo que foi feito, que foi pensado por uma equipe de desenvolvedores:
 
-![imagem do código](E:\Usuarios\Jonatas\Desktop\Jonatas\Programação\ONE-ALURA\Lógica de programação\01.01_001_imagem-do-codigo.png)
+![imagem do código](https://s3.amazonaws.com/caelum-online-public/440+-+L%C3%B3gica+de+Programa%C3%A7%C3%A3o/Aula+01/01.01_001_imagem-do-codigo.png)
 
 Além do browser, será necessário utilizarmos algum **editor de texto**, pode ser um simples, que já vem no sistema operacional. Entretanto, caso seja usuário do **OS Windows**, é interessante utilizar algum outro, como o [NotePad++](https://notepad-plus-plus.org/downloads/v7.9.5/), ou o [Sublime](https://www.sublimetext.com/3). No meu caso, utilizarei o [Visual Studio Code](https://code.visualstudio.com/) e [Typora](https://typora.io/) para anotações.
 
