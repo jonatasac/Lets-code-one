@@ -95,3 +95,50 @@ Para resolvermos o problema da acentuação, ao salvarmos o arquivo em nosso dis
 ```
 
 Estamos indicando ao navegador como deve ser a interpretação das cadeias de caracteres, ou seja, do texto que está sendo exibido. Portanto, a simples adição desta *tag* resolverá o problema de acentuação.
+
+No depurador, há uma aba chamada "Console", localizada na barra de menu superior. É possível o abrirmos acessando o menu "Visualizar" também, na barra de menu superior, selecionando "Desenvolvedor > Console JavaScript".
+
+Os elementos que vimos agora - **o browser, o editor de texto, o depurador** - são usados para identificarmos os erros em nosso código e compõem as ferramentas que utilizaremos por todo nosso treinamento.
+
+#### 4. Resumo
+
+- Aprendemos que desenvolver **não** exige um ambiente complexo;
+- É possível utilizar o próprio navegador, e todo sistema operacional possui um. Ao longo do curso utilizaremos o **Google Chrome**;
+- Podemos utilizar um editor de texto padrão. Nós usaremos o **Sublime Text**, disponível para todas as plataformas;
+- Compreendemos que o HTML é uma linguagem de marcação, pois ela possibilita marcar conteúdos por meio de *tags*;
+- Algumas *tags* não possuem marcação, como o `<br>`, que serve para pular uma linha;
+- A *tag* `<a>` nos permite sair de uma página e mudar para outra;
+- O HTML é estático, isto é, não muda. Não podemos fazer nada muito sofisticado com ele. Por esse motivo o navegador entende também a linguagem JavaScript, que é uma linguagem de programação dinâmica, com a qual podemos desenvolver de maneira mais avançada;
+- Para o navegador interpretar uma instrução JavaScript, não basta colocarmos a instrução JavaScript direto no HTML. Temos que utilizar a *tag* `<script>`. Dessa forma o navegador saberá que deve processar essa parte do código como linguagem JavaScript e não como HTML;
+- A primeira instrução que vimos do JavaScript foi o `alert`, que recebe como parâmetro um texto;
+- Por último, aprendemos que todo texto em JavaScript vem entre aspas.
+
+Por incrível que pareça, a mesma ferramenta que você utiliza para navegar na web será a mesma que você utilizará para interpretar o código que você escreverá. Além disso, ele é capaz de entender mais de uma linguagem, por isso o chamo de poliglota. E como todo sistema operacional já vem com um navegador padrão instalado, isso tornará ainda mais fácil a nossa jornada no mundo da programação. Contudo, para que você tenha uma paridade visual comigo ao longo do treinamento, sugiro fortemente que você use o Chrome.
+
+#### 5. Extensão de arquivos
+
+Você já utilizou um processador de texto ou planilha? Por exemplo, arquivos do Microsoft Word possuem a extensão `.doc` ou `.docx`. Assim, caso você tenha salvo um arquivo chamado "receitas", dentro do computador ele será "receitas.docx". A mesma coisa serve para as planilhas do Excel, por exemplo, uma planilha chamada "custos" quando salva no computador agrega a extensão `.xls`, sendo assim, o nome completo do arquivo é `custos.xls`.
+
+A extensão do arquivo é importante, pois confere ao Sistema Operacional uma pista de qual programa deve ser usado para abrir o arquivo em questão. Assim, todo arquivo que criarmos até o final do curso utilizará a extensão `.html`.
+
+**Convenção (sendo politicamente correto)**
+
+Assim como o condomínio de um prédio possui uma convenção, o mundo da programação é repleto delas. Por exemplo, uma convenção muito utilizada é criar arquivos com letras minúsculas e se houver mais de uma palavra usamos um "_" como separador. Além disso, não usamos acentos no nome dos arquivos. É claro que, assim como a convenção de um condomínio pode não ser seguida, nada impede que o programador crie o arquivo do jeito que quiser. E, da mesma forma que um morador que comete infrações não será bem visto pelos demais condôminos, o mesmo ocorre com o programador.
+
+#### 6. Importância da tag meta.
+
+Quando salvamos um arquivo texto no disco ele é salvo usando uma cadeia de caracteres (*character set encoding*). Se no editor de texto salvamos o arquivo contendo `charset` UTF-8, precisamos dar uma pista para o navegador de como ele deve ser processado. Se não fizermos isso, ele não conseguirá exibir corretamente qualquer texto acentuado.
+
+Contudo, muito cuidado! Vamos supor que acidentalmente seu editor de texto não salvou o arquivo como `UTF-8`, mas em `latin1`. Se colocarmos a tag `<meta charset="UTF-8">` estaremos dando uma dica errada para o navegador e isso nos trará problemas na acentuação. Para resolver esse tipo de situação, podemos usar `<meta charset="latin">` ou mudar nosso arquivo para `UTF-8`, o que é mais difícil.
+
+Pode ser que o editor de texto escolhido não siga o padrão UTF e utilize outro qualquer que nem eu ou você sabemos.
+
+Mais do que os caracteres saírem certos ou errados, o importante é aprender a lógica de programação. O que estamos abordando serve para tornar sua experiência melhor e seu programa mais bonito.
+
+### [Comunique-se com o usuário](https://cursos.alura.com.br/course/logica-programacao-javascript-html/task/17659)
+
+#### 1. Convenção de código
+
+Há uma convenção de que as tags HTML devem ser escritas com letras minúsculas. Porém, se utilizarmos `<H1>` ela funcionará perfeitamente.
+
+Outro ponto: da mesma forma, se na tag `<script>` escrevermos em letras maiúsculas, o resultado não será alterado, mas a convenção aconselha a mantermos as letras minúsculas. No entanto, tenha **atenção**, o mundo JavaScript é mais rígido.
