@@ -1,5 +1,6 @@
 # Oracle Next Education - Alura
 Repositório criado para o curso do Oracle Next Education na Alura.
+Aluno: Jonatas Aguiar Canuto
 
 ## Índice
 ### [1. Algorítmos](https://github.com/jonatasac/ONE-ALURA/tree/main/Algoritmos)
