@@ -12,7 +12,7 @@
 
 ### [Comece a programar hoje ](https://cursos.alura.com.br/course/logica-programacao-javascript-html/section/4172/tasks)
 
-#### Converse com seu navegador
+#### 1. Converse com seu navegador
 
 Assim como em qualquer profissão, o programador precisa de ferramentas para que possa exercer esta função. Uma delas é o próprio navegador, o browser que você costuma utilizar para navegar na web. Podem ser utilizados o Edge, o Firefox, Chrome, no caso, utilizarei o **Google Chrome**.
 
@@ -30,7 +30,7 @@ O Chrome, a partir da versão 55, passou a detectar automaticamente o *encoding*
 
 No entanto, ela deve continuar a ser usada, porque nem todos os navegadores detectam o *encoding* automaticamente, sendo assim, é uma boa prática manter a tag `<meta>` indicando o `charset` usado na hora de criar o arquivo.
 
-#### Criando seu próprio arquivo HTML
+#### 2. Criando seu próprio arquivo HTML
 
 Tendo o arquivo, é importante a inserção do `.html`, por esta ser a linguagem que o navegador entende e, ao utilizarmos a extensão, estamos orientando-o sobre qual deve ser a interpretação do arquivo por parte do navegador e do sistema operacional.
 
@@ -50,7 +50,7 @@ O **HTML** conta com a tag `<h1>`. O "h" se origina da palavra *heading*, ou sej
 
 Uma particularidade da tag `<br>` é que, no início, inserimos `<>` e pronto - já para a tag `<h1>` e a maioria das tags HTML, precisaremos da mesma tag com uma barra `</h1>` para fechá-la.
 
-#### Dê olá ao mundo
+#### 3. Dê olá ao mundo
 
 `<a>` - Tag usada de **âncora**, representada pela letra a. Por meio do atributo `href`, indicaremos o endereço web, ficando: `<a href="http://www.alura.com.br">aqui</a>`
 
@@ -62,3 +62,36 @@ Para que possamos de fato programar, precisaremos utilizar uma outra linguagem. 
 
 <center> Neste treinamento, aprenderemos a lógica de programação utilizando a linguagem <b>JavaScript</b>. </center>
 
+Queremos exibir um alerta para o usuário, um *pop-up* que surja na tela e contenha a seguinte mensagem: "isso aqui é uma linguagem dinâmica" ou "isso aqui é uma linguagem de programação".
+
+Como fazer isso? Primeiro, definiremos a mensagem em JavaScript. E para criarmos um texto no JavaScript, é necessário que ele esteja entre aspas!
+
+O JavaScript nos permite exibir um *pop-up* na tela, que será de alerta. Precisaremos utilizar uma instrução da linguagem indicando que um alerta deverá ser exibido: 
+
+`alert("Isso sim é um programa");`
+
+Há uma peculiaridade: o texto deve estar entre **parênteses e aspas duplas** **`" "`**, e com um **`;`** (ponto e vírgula) no fim:
+
+Uso do ponto e vírgula no final de uma instrução JavaScript é opcional e neste treinamento não teremos problemas com sua ausência. Contudo, ao avançar nesta linguagem você verá determinados processamentos de código podem resultar em algo não esperado na ausência do ponto e vírgula. Sendo assim, vamos criar desde já o hábito de terminar uma instrução com o ponto e vírgula.
+
+Adiante veremos mais sobre isso. Em teoria, isto é suficiente para escrevermos nosso primeiro código em **JavaScript**.
+
+Porém, o *pop up* não aparece. O que temos é o texto que gostaríamos que fosse exibido na tela para o usuário aparecendo no corpo do HTML e, ainda, com um problema de acentuação - que resolveremos adiante.
+
+Por que isto acontece? Como o navegador é poliglota, ou seja, entende mais de uma linguagem (por exemplo, HTML e JavaScript), temos que indicar que determinada linha é uma instrução.
+
+Como faremos isto? Com uma tag `<script>`, que também abre e fecha.
+
+```javascript
+<script>
+alert("Isso sim é um programa");
+</script>
+```
+
+Para resolvermos o problema da acentuação, ao salvarmos o arquivo em nosso disco, o faremos com um conjunto de caracteres, e o padrão é `UTF-8`. Sendo assim, utilizamos a tag desta maneira:
+
+```html
+<meta charset="UTF-8">
+```
+
+Estamos indicando ao navegador como deve ser a interpretação das cadeias de caracteres, ou seja, do texto que está sendo exibido. Portanto, a simples adição desta *tag* resolverá o problema de acentuação.
