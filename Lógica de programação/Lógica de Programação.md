@@ -142,3 +142,33 @@ Mais do que os caracteres saírem certos ou errados, o importante é aprender a 
 Há uma convenção de que as tags HTML devem ser escritas com letras minúsculas. Porém, se utilizarmos `<H1>` ela funcionará perfeitamente.
 
 Outro ponto: da mesma forma, se na tag `<script>` escrevermos em letras maiúsculas, o resultado não será alterado, mas a convenção aconselha a mantermos as letras minúsculas. No entanto, tenha **atenção**, o mundo JavaScript é mais rígido.
+
+#### 2. Concatenação
+
+Se utilizarmos o `alert` no mundo JavaScript para exibir um texto para o usuário, e caso tenhamos dez mensagens, quantas vezes o usuário terá de pressionar "OK"? Várias. Isso tornará a experiência do visitante ruim. Se ele quiser ler a última linha, não conseguirá, porque surgirão muitos alertas seguidos.
+
+O que fazer? O mundo JavaScript é representado por tudo que está inserido na tag `<script>`. Todo o conteúdo desta tag é interpretado pelo navegador como JavaScript. O mundo HTML é compreendido como tudo que está **fora** da tag `<script>`. O que faremos é escrever, a partir do mundo JS, um HTML. Para isto, adicionaremos `document.write()`.
+
+A palavra `document` significa, em português, "documento". Nossa página HTML, nosso programa, é um documento. Já a palavra `write` corresponde à palavra "escrever". O `write` recebe parênteses ao final, ou seja, ele aceita receber algo para escrever no documento. Como vimos, o texto no JavaScript é incluído entre aspas. O texto é chamado de `string`, tanto em JS como em outras linguagens de programação.
+
+Se quisermos pular uma linha, por exemplo, podemos utilizar a tag `<br>`. Isso porque a frase exibida no navegador está inserida no mundo HTML, e neste contexto, utilizamos esta tag sempre que queremos pular uma linha. Como estamos escrevendo no mundo HTML, quando o navegador for processar a informação verá o `<br>` e entenderá que deve pular uma linha.
+
+Portanto, na programação há diversas formas de se atingir um mesmo objetivo. Em algumas delas, escreveremos mais código, enquanto outras são mais diretas e simples. A forma a ser utilizada dependerá do tipo de problema que você está tentando resolver.
+
+O JavaScript só considera algo como texto se estiver entre aspas, portanto, da forma como escrevemos `18`, o número será interpretado como texto? Não. Como sua representação é numérica, ele será interpretado como um número.
+
+Portanto, o `document.write` aceita trabalhar com tipo `texto` - "tipo" indica que é um tipo de dado -, cujo termo técnico é *string*, e "18", que é um número. Minha idade real não é 18, entretanto, os números nos permitem realizar operações.
+
+Quando temos uma operação de soma envolvendo texto, o JavaScript não entende se tratar de um número, e portanto realiza uma operação à qual damos o nome de **concatenação**. Isto significa que ele juntou um texto ao outro. Este é então passado para o `write`, que o imprime desta forma.
+
+Estamos tentando somar um texto com um número. Uma string somada a outra resulta em uma concatenação, um número somado a outro resulta na soma numérica dos dois, mas quando temos uma string a ser somada com um número converte este último para texto, ou seja, quando há texto e número, ele converte tudo para texto.
+
+#### 6. Operações com textos e números
+
+A programação, assim como na matemática, prioriza a avaliação das multiplicações e divisões. Sendo assim, se quisermos indicar que algo deve ser avaliado primeiro, devemos inseri-lo entre parênteses, sem confundir com os parênteses que seguem o comando `write`.
+
+A primeira coisa que o JavaScript fará é identificar a presença de parênteses, que indiquem uma operação a ser priorizada. Feito isso, a análise ocorrerá normalmente, da esquerda para a direita. Por fim, será concatenado o `<br>`, já que o comando está inserido no código HTML, resultando na quebra de linha entre uma frase e a seguinte.
+
+### [Torne seu programa dinâmico com variáveis](https://cursos.alura.com.br/course/logica-programacao-javascript-html/section/4174/tasks)
+
+#### 1. Reduzindo alterações
