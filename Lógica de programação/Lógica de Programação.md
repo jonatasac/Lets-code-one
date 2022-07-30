@@ -172,3 +172,53 @@ A primeira coisa que o JavaScript fará é identificar a presença de parêntese
 ### [Torne seu programa dinâmico com variáveis](https://cursos.alura.com.br/course/logica-programacao-javascript-html/section/4174/tasks)
 
 #### 1. Reduzindo alterações
+
+Em nosso programa, conseguimos este efeito de "envelope" por meio da criação de **variáveis**. Como o próprio nome sugere, elas variam, e são representadas da seguinte forma:
+
+```javascript
+var ano = 2016;
+```
+
+Dessa forma reduzimos o número de alterações no javascript, criando variáveis e quando ela for alterada, altera no texto todo onde ela estiver inserida.
+
+Quando o JavaScript se depara com a variável `ano`, ele somente a interpretará como uma string se estiver em aspas (`"ano"`). Como não é o caso, ele verificará se é um número. Não se tratando de um numeral, o JS determinará se é uma variável. Anteriormente, escrevemos `var ano`, sendo assim, ela existe, e quando o valor for computado, a palavra `ano` será trocada pelo valor `2016`.
+
+O processo de "raciocínio" do JavaScript será questionar se determinado trecho está entre aspas, e se estiver, é uma string, caso negativo, será feita uma próxima pergunta: trata-se de um número? Caso a resposta seja "não", significa que se trata de uma **variável**.
+
+É interessante trabalharmos com variáveis, porque ao declaramos eles em um único lugar, várias instruções podem depender de uma mesma variável e, quando alteramos seu valor, isso é refletido em todos os pontos do código onde aparece.
+
+**Cuidado**, como dito anteriormente, a variável é escrita somente com letras minúsculas.
+
+Em qualquer momento, no próprio código, podemos indicar um novo valor para esta mesma variável. O navegador processará a tag `<script>` linha a linha, na ordem em que foram declaradas.
+
+O prefixo `var` só é utilizado ao declararmos a variável pela primeira vez, então não é necessário utilizá-lo ao definirmos um novo valor. As variáveis nos ajudam, também, a fazer a manutenção de nosso código, já que ela é declarada em um único ponto e pode ser utilizada em diversos momentos.
+
+#### 2. Variáveis
+
+Uma variável pode guardar praticamente o que você quiser: um número, uma string ou outro pedaço de código.
+
+Podemos criar novas variáveis para também diminuir o número de parênteses e ficar mais visual e organizado o código.
+
+Para arredondar números usamos um comando contido em Javascript:
+
+```javascript
+Math.round()
+```
+
+Assim passando um parâmetro para os parênteses, esse comando consegue arredondar os números. 
+
+Uma convenção importante: o nome de uma variável sempre se iniciará com uma letra **minúscula**. Se a variável contém duas palavras, por exemplo "idade + (nome)", a próxima palavra deve ser escrita com a primeira letra **maiúscula**. Este padrão recebe o nome de **camelCase**.
+
+E se quisermos escrever a variável inteira em letras minúsculas, mesmo que sejam duas palavras? O seu código funcionará da mesma forma, o nome da variável apenas não vai seguir a convenção do mundo da programação.
+
+Para esclarecer que as variáveis não podem guardar somente números, criaremos o seguinte trecho:
+
+```javascript
+var nome = 'Jonatas';
+```
+
+No JavaScript, podemos utilizar tanto as aspas simples (**`'`**) quanto aspas (**`"`**). Colocaremos as aspas duplas, mesmo porque outras linguagens de programação as utilizam.
+
+### [Crie suas próprias funcionalidades](https://cursos.alura.com.br/course/logica-programacao-javascript-html/section/4175/tasks)
+
+#### 1. Melhorando a manutenção do código
