@@ -222,3 +222,186 @@ No JavaScript, podemos utilizar tanto as aspas simples (**`'`**) quanto aspas (*
 ### [Crie suas próprias funcionalidades](https://cursos.alura.com.br/course/logica-programacao-javascript-html/section/4175/tasks)
 
 #### 1. Melhorando a manutenção do código
+
+Quando utilizamos o `document.write()` para inserir a tag `<br>`, isso representa uma quebra de linha. Agora, nosso chefe fez um novo pedido, ele quer que existam duas linhas de intervalo entre cada frase, pois acredita que assim as linhas ficarão mais espaçadas. Como podemos solucionar o problema? Uma opção seria adicionar mais uma linha de código com `<br>`. Se o chefe pedir mais linhas, basta ir adicionando mais instruções com `document.write()`. E se o chefe muda de ideia toda hora? Em algum momento ele pode querer voltar atrás, isto é, que o programa pule apenas uma linha.
+
+Uma solução que resolve a situação de maneira simples é adicionar a quantidade de linhas que queremos pular em uma mesma instrução. Desta forma, acrescentaremos um número de `<br>` equivalente à quantidade de linhas que desejamos saltar:
+
+```javascript
+    document.write("<br><br><br>");
+```
+
+Porém, quando o chefe pedir novas alterações quanto ao intervalo de linhas, teremos que fazer essa alteração em todos os lugares nos quais isto ocorre! Isto vai dificultando cada vez mais a manutenção do código. Se tivermos trinta pulos de linha, algo comum em um programa, será necessário fazer alterações em n lugares diferentes.
+
+Já vimos que as variáveis podem nos blindar desse tipo de situação. Abaixo da variável `ano`, criaremos a variável `puloLinha`, a que adicionaremos o `"<br>"`:
+
+```javascript
+var puloLinha = "<br>";
+```
+
+No lugar de passarmos o `"<br>"` para o `document.write()`, poderemos passar direto a seguinte variável:
+
+```javascript
+document.write(puloLinha);
+```
+
+Na hora em que o `document.write()` for ser acessado, ele irá pegar o conteúdo da variável, a tag `<br>`.
+
+A partir de agora, caso seu chefe tenha interesse em pular linhas, o código pode ser ajustado em um único lugar. Imagine que ele tenha exigido que o intervalo seja de duas linhas. Para resolver esse problema faremos a seguinte modificação:
+
+```javascript
+var puloLinha = "<br><br>";
+```
+
+E automaticamente isso muda a quantidade de linhas vazias em todo o código.
+
+Com isso, aprendemos que o uso de uma variável nos permite facilitar a manutenção do código!
+
+#### 2. Funções
+
+Até aqui, resolvemos um problema de manutenção. Sempre que quisermos pular uma linha, mesmo declarando a variável `puloLinha`, usaremos `document.write(puloLinha)`. Isso é melhor em relação ao modelo anterior pois `puloLinha` pode guardar um pulo com várias linhas.
+
+Mas se pedirmos para uma pessoa sem conhecimento em Programação nos dizer o significado da instrução `document.write()`, ela provavelmente não entenderá do que se trata. Isto ocorre por conta da falta de clareza no código.
+
+Além disso, é tedioso para os programadores escreverem diversas vezes a mesma instrução. A utilidade de `document.write()` consiste em escrever na tela aquilo que passamos como parâmetro entre os parênteses.
+
+Supondo que estamos seguindo um texto de um livro, faria sentido se o conteúdo fosse o seguinte?
+
+```javascript
+document.write("Flávio tem " + (ano - 1977) + " anos");
+pulaLinha
+document.write("Joaquim tem " + (ano - 1996) + " anos");
+pulaLinha
+```
+
+O texto está escrito em português, se chamarmos um colega para ler a instrução, ele entenderá que a função de `pulaLinha` é de pular uma linha. O JavaScript nos permite fazer essa tarefa, criar nossas funcionalidades, ou seja, as próprias funções.
+
+No entanto, há uma peculiaridade - quando queremos executar o `document.write`, temos que inserir o parâmetro entre parênteses, e no caso do `pulaLinha`, não haverá nenhum, então a funcionalidade simplesmente será executada. De qualquer forma, incluiremos os parênteses:
+
+```javascript
+document.write("Flávio tem " + (ano - 1977) + " anos");
+
+pulaLinha();
+
+document.write("Joaquim tem " + (ano - 1996) + " anos");
+
+pulaLinha();
+```
+
+Nossa função `pulaLinha()` não receberá nada, sendo simplesmente declarada. Sabemos que ela na verdade terá a linha com `document.write()`, utilizada anteriormente:
+
+```javascript
+document.write("<br>");
+```
+
+Como criamos uma função no JS? Convencionaremos que todas as funções que criarmos estarão nas primeiras instruções da tag `<script>`, ou seja, declararemos no início do código. Para declararmos uma função, utilizaremos o termo em inglês *function*, seguido de um nome, no caso, `pulaLinha`:
+
+```javascript
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha()
+
+//...
+</script>
+```
+
+Inserimos os parênteses por ser uma exigência do JavaScript para declararmos uma função. Queremos que esta função escreva `document.write("<br>")`, portanto faremos isso dentro do bloco da função, entre chaves.
+
+Tudo que estiver entre as chaves pertence à função `pulaLinha()`. Um ponto importante - a função é sempre descrita por um verbo, seja ele "pula", "grita", "comemora", ou qualquer outro, isto porque ela sempre indica uma ação a ser executada. Como `document.write()` pertencerá à função, adicionaremos-na dentro das chaves:
+
+```javascript
+<meta charset="UTF-8">
+
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+
+}
+//...
+</script>
+```
+
+Nós indentaremos o trecho de código. Trata-se de uma boa prática, uma convenção no mundo da programação - se estamos em um bloco, utilizamos "Tab" para criar um espaçamento na linha e, assim, o código ficará **indentado** e teremos uma melhor noção de hierarquia. Neste caso, saberemos que `document.write()` pertence à função `pulaLinha()`.
+
+Uma função pode ser um atalho para várias outras instruções, por exemplo, quando `pulaLinha()` for processado, é como se o JavaScript estivesse substituindo por duas quebras de linha no formato `document.write("<br>")`.
+
+Assim, é como se, ao chegar em `pulaLinha()`, o JavaScript parasse para acessar o bloco da função e executasse as funções contidas nela. Podemos criar nossas próprias funções para deixar nossa programação mais legível, interessante, e mais fácil de se manter.
+
+Podemos reutilizar o `pulaLinha()` em qualquer lugar do sistema; se quisermos alterar a maneira como esta função é utilizada, isto não afetará o restante do código. Podemos obter o mesmo resultado com apenas uma instrução.
+
+Quem chama a função `pulaLinha()` nem saberá que ela foi alterada, desde que ela funcione da mesma forma.
+
+A vantagem de uma função é tornar legível a intenção do que queremos fazer. Se quisermos pular uma linha, por exemplo, criaremos o `pulaLinha()`, sempre utilizando um verbo e indicando uma ação.
+
+Uma função representa um conjunto de instruções, e é possível ter uma, duas, cem instruções - **não há limites**. Sendo assim, será desnecessário reescrevê-las em diversos pontos no código, basta utilizarmos a função criada.
+
+O nome de uma função é tão importante quanto o código que ela executa, para deixar claro o que ela faz.
+
+Com isso, concluímos a criação de nossa primeira função, que não recebe parâmetro. O `document.write()` aceita receber parâmetros para, internamente, imprimir na tela aquilo que lhe é passado. Já o `pulaLinha()` ficou vazio e não está preparado para lidar com isso.
+
+#### 3. Funções com parâmetros
+
+Já simplificamos a maneira de pular linhas criando a função `pulaLinha()`. Será que é possível fazermos o mesmo com o `document.write()`? Quando queremos exibir algo para o usuário, sempre temos que escrevê-lo, incluindo também a mensagem entre parênteses.
+
+É uma sintaxe extensa. Em vez de escrevermos tudo isso, criaremos uma função chamada `mostra()`. Quem mostra, **mostra algo**, portanto esta função receberá uma mensagem como parâmetro, em vez de nenhum. Se compararmos as instruções:
+
+```javascript
+document.write("Olá pessoal!");
+
+mostra("Olá pessoal");
+```
+
+Vemos que a segunda, além de mais sucinta, fica explícita nossa intenção de mostrar algo. Quando um terceiro olhar nosso código, ao ver `mostra()`, saberá que seu propósito é exibir algo na tela.
+
+E como criamos a função `mostra()`? Primeiro colocaremos alguns trechos em comentários, por meio de barras duplas (`//`). O programa ignorará a referida linha, que continuará presente para fins didáticos, para lembrarmos o que havia antes.
+
+Nosso objetivo é que `mostra()` faça `document.write()`, que por sua vez recebe o que queremos exibir. O importante é que toda função seja declarada no início do arquivo, não importa se antes ou depois de `pulaLinha()`. Em seguida, determinaremos o que ela fará:
+
+```javascript
+function mostra() {
+
+    document.write("Olá");
+
+}
+```
+
+No programa, estamos passando diferentes concatenações para que a função `mostra()` exiba, mas o que será realmente exibido? Faremos um teste. Salvaremos o programa, retornaremos ao navegador e recarregaremos o programa. Obtivemos o seguinte:
+
+```javascript
+Olá
+
+Olá
+
+OláOlá
+```
+
+Ou seja, o programa ignorou completamente o que havíamos passado para ser exibido, o parâmetro, e está exibindo somente `Olá`. Precisamos descobrir uma forma de os parâmetros serem transmitidos para o `document.write()` presente na construção da função. Como faremos isso?
+
+Temos os parênteses obrigatórios após o nome da função:
+
+```javascript
+function mostra() {
+}
+```
+
+Escolheremos um nome aleatório para inserir, por exemplo `frase`. Quando `mostra()` receber um parâmetro, ele será enviado para dentro da variável `frase`. Ao chegar nessa instrução, o JS interpretará como se `frase` fosse igual à frase que queremos exibir.
+
+O parâmetro da função é considerado como se fosse uma variável. No caso, `frase` recebe o que está sendo passado no programa, em `mostra()`. No caso do `Olá pessoal!`, ele exibirá este texto. Tendo definido o parâmetro da função, em `document.write()`, o incluiremos como parâmetro também:
+
+```javascript
+function mostra(frase) {
+
+    document.write(frase);
+
+}
+```
+
+Aprendemos a criar uma função, mas desta vez estamos criando uma que recebe um parâmetro. Se quisermos que a função receba algo, precisaremos indicar isto incluindo um nome. Além disso, em uma função também podemos fazer a chamada de outra função dentro dela.
+
+### [Pratique resolvendo problemas do seu dia a dia](https://cursos.alura.com.br/course/logica-programacao-javascript-html/section/4198/tasks)
+
+#### 1. Calculando IMC
